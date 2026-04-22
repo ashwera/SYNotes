@@ -9,11 +9,13 @@ count=0
 
 echo "Fibonacci series:"
 
-while [ $count -lt $n ]
+while (( $count < $n ))
 do
-    echo -n "$a "
+    echo -n "$a " 
+    # print a without going to new line 
 
     fn=$((a + b))
+    # in a new var, store value of sum of a and b
     a=$b
     b=$fn
 

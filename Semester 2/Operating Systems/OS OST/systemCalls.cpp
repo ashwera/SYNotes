@@ -14,12 +14,7 @@ int main() {
     else if(pid == 0) {
         // Child process
         cout << "Child process (PID: " << getpid() << ")\n";
-
-        // Replace child with new program
-        execl("/bin/ls", "ls", "-l", NULL);
-
-        // Only runs if exec fails
-        cout << "Exec failed\n";
+        cout << "Parent PID: " << getppid() << endl;
     }
 
     else {
@@ -27,6 +22,8 @@ int main() {
         cout << "Parent waiting for child...\n";
         wait(NULL);
         cout << "Child finished\n";
+        cout << "Child process (PID: " << pid << ")\n";
+        cout << "Parent PID: " << getpid() << endl;
     }
 
     return 0;

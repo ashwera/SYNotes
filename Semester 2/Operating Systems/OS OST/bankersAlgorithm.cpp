@@ -9,6 +9,7 @@ int main() {
     vector<int> available(m);
     cout << "Enter available resources:\n";
     for (int &i : available) cin >> i;
+    // the ith resource has available[i] instances free
 
     vector<vector<int>> maxm(n, vector<int>(m));
     cout << "Enter max matrix:\n";
@@ -16,11 +17,17 @@ int main() {
         for (int j = 0; j < m; j++)
             cin >> maxm[i][j];
 
+    // maximum resources each process may need
+    // Process i
+    // may need up to matrix[i][j] instances of resource j
+
     vector<vector<int>> alloc(n, vector<int>(m));
     cout << "Enter allocation matrix:\n";
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             cin >> alloc[i][j];
+
+    // allocation matrix: allocation[i][j] instances of resource j have been given to process i
 
     // Need matrix
     vector<vector<int>> need(n, vector<int>(m));

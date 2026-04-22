@@ -54,7 +54,7 @@ int main() {
         }
 
         if(p[i].rt > 0) {
-            q.push(i);
+            q.push(i); //add the latest executed process back if remaining
         } else {
             completed++;
             p[i].ct = time;
