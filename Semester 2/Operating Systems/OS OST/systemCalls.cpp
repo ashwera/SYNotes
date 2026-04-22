@@ -15,6 +15,9 @@ int main() {
         // Child process
         cout << "Child process (PID: " << getpid() << ")\n";
         cout << "Parent PID: " << getppid() << endl;
+        execl("/bin/ls", "ls", "-l", NULL); {
+            perror("Exec failed");
+        }
     }
 
     else {

@@ -26,6 +26,8 @@ int main() {
 		int idx = -1;
 		int minDist = INT_MAX;
 
+		// find index of request not yet processed
+		// and such that its dist is least 
 		for (int j = 0; j < n; j++) {
 			if (!visited[j]) {
 				int dist = abs(req[j] - head);

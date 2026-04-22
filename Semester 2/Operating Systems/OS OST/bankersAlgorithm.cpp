@@ -57,7 +57,7 @@ int main() {
                 }
 
                 if (possible) {
-                    // if its possible, finish off and deallocate 
+                    // if its possible, finish off and deallocate resources 
                     for (int j = 0; j < m; j++)
                         work[j] += alloc[i][j];
 
@@ -67,7 +67,7 @@ int main() {
                 }
             }
         }
-
+        // IF ACROSS ONE WHOLE ITERATION NOT EVEN ONE PROCESSEABLE IS FOUND, KYS 
         if (!found) break;
     }
 
