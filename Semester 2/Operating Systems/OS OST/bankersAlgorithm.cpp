@@ -43,17 +43,21 @@ int main() {
         bool found = false;
 
         for (int i = 0; i < n; i++) {
+            // /FOR THE ITH PROCESS
             if (!finish[i]) {
                 bool possible = true;
 
                 for (int j = 0; j < m; j++) {
+                    // check the jth resource
                     if (need[i][j] > work[j]) {
+                        // if it needs more than available, break
                         possible = false;
                         break;
                     }
                 }
 
                 if (possible) {
+                    // if its possible, finish off and deallocate 
                     for (int j = 0; j < m; j++)
                         work[j] += alloc[i][j];
 
